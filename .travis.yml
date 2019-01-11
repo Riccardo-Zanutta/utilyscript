@@ -5,7 +5,7 @@ cache:
     - node_modules
 notifications:
   email: false
-node_js:
-  - io_js
+script:
+  npm run build
 after_success:
   npm run semantic-release

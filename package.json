@@ -7,7 +7,7 @@
     "commit": "git-cz",
     "prebuild": "rimraf dist",
     "build": "babel --copy-files --out-dir dist src",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,10 @@
   "keywords": [
     "utilities",
     "javascript"
+  ],
+  "files": [
+    "dist",
+    "README.md"
   ],
   "author": "Riccardo Zanutta",
   "license": "MIT",
@@ -32,8 +36,10 @@
     "rimraf": "2.6.3",
     "semantic-release": "^15.13.3"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "babel": {
     "presets": [
