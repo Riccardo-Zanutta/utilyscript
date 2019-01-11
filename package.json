@@ -1,15 +1,17 @@
 {
   "name": "utilyscript",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "A micro utility library for the modern frontend developer",
   "main": "dist/index.js",
   "scripts": {
+    "commit": "git-cz",
     "prebuild": "rimraf dist",
-    "build": "babel --out-dir dist src --ignore src/scripts/**/*.js"
+    "build": "babel --copy-files --out-dir dist src",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Riccardo-Zanutta/utilyscript.git"
+    "url": "https://github.com/Riccardo-Zanutta/utilyscript.git"
   },
   "keywords": [
     "utilities",
@@ -25,7 +27,13 @@
     "@babel/cli": "7.2.3",
     "@babel/core": "7.2.2",
     "@babel/preset-env": "7.2.3",
-    "rimraf": "2.6.3"
+    "commitizen": "3.0.5",
+    "cz-conventional-changelog": "2.1.0",
+    "rimraf": "2.6.3",
+    "semantic-release": "^15.13.3"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   },
   "babel": {
     "presets": [
